@@ -66,6 +66,19 @@
 							
                 });
 
+                var showprofile = 0
+
+                $('.showprofile').click(function(){
+
+                        if(showprofile == 0){
+                                $('.profile').show(500);
+                                showprofile = 1;
+                        }else if (showprofile == 1){
+                                $('.profile').hide(500);
+                                showprofile = 0;
+                        }
+                })
+
                 var width = $(window).width();
                 if(width >= 900){
                         $('.small_sidebar').css("display", "none");

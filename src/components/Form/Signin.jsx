@@ -42,7 +42,10 @@ const Signin = () =>{
                                         })
                                 }else{
                                         localStorage.setItem("userid",formdata.userid)
-                                        history.push("/")
+                                        history.push({
+                                                pathname: '/',
+                                                status:"signin_success",
+                                        });
                                 }
                         },(error)=>{
 

@@ -2,6 +2,8 @@ import react,{useState,useEffect} from 'react';
 import axios from 'axios'
 import './Home.css'
 
+import Profile from './Profile'
+
 
 const Teams = (props) =>{
 
@@ -59,6 +61,8 @@ const Hero =()=>{
         const [team,setTeam] = useState([]);
         const userid = localStorage.getItem("userid")
 
+        
+
         useEffect(() => {
                 
                 if(userid != null){
@@ -89,6 +93,8 @@ const Hero =()=>{
 
         return(
                 <>
+
+
 
                         <div class="Hero mt-5">
 

@@ -144,3 +144,15 @@ footer a:hover{
         border : none;
         border-bottom : 1px solid white;
 }
+
+.profile{
+
+        position:fixed;
+        top:80px;
+        left:10px;
+        width:300px;
+        background-color:lightyellow;
+        box-shadow: 0 0 30px rgba(0, 255, 0);
+        z-index:1;
+        display:none;
+}

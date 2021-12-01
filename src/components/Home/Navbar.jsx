@@ -6,7 +6,6 @@ const Nav = () =>{
 
         const logout = () =>{
                 localStorage.removeItem('userid');
-
         }
 
 
@@ -36,8 +35,8 @@ const Nav = () =>{
                                         <a href="/"> <span class=""> <h4 class="logotext">DOCX</h4>       </span></a>
 
                                         <span class=""> 
-                                                <a class="h6" href=""><span class="href">  
-                                                <span class=""> <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i> </span></span></a>
+                                                <span class="href showprofile">  
+                                                <span class=""> <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i> </span></span>
 
                                                 <a class="h6 px-2 text-danger" href=""><span class="href">  
                                                 <span onClick={logout} class="h5 text-danger"> logout </span> </span></a>
