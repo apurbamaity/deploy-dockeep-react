@@ -30,12 +30,16 @@ class Chatbox extends Component{
         /*if (!this.state.file) {
         //this.setState({ error: "Please upload a file." });
         return;
-        }
-
-        if (this.state.file.size >= 2000000) {
-                this.setState({ error: "File size exceeds limit of 2MB." });
-                return;
         }*/
+
+        if (this.state.file.size >= 1000000) {
+                toast.error('🦄 file size should be less 1 mb!!', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        closeOnClick: true,
+                });
+                return;
+        }
 
         let data = new FormData();
         data.append("file", this.state.file);
