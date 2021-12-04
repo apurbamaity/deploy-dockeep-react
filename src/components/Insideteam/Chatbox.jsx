@@ -48,7 +48,7 @@ class Chatbox extends Component{
 
 
         const url = process.env.REACT_APP_SERVER_URL
-        const send = this.state.comment+"&&"+this.props.id+"&&"+localStorage.getItem('userid')
+        const send = this.props.id+"&&"+localStorage.getItem('userid')+"&&"+this.state.comment
         console.log(typeof data.file)
         
         /*if(data.name == undefined){
@@ -127,19 +127,6 @@ class Chatbox extends Component{
                
 
                 (response) => {
-
-                        /*toast.success('🦄 file uploaded successfully!!', {
-                        position: "top-center",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        });*/
-
-                        /*this.setState({
-                                fileis:0,
-                        });*/
-
-
 
                         console.log(response);
                         this.props.met()
@@ -226,7 +213,7 @@ class Chatbox extends Component{
                                 <div class="d-flex justify-content-between mb-0 mb-1">
                                         <div class="file">
                                                 
-                                                <input onChange={this.onFileChange} type="file" />*
+                                                <input onChange={this.onFileChange} type="file"/>
                                         </div>
                                         
 

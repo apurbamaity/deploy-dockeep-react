@@ -24,6 +24,27 @@ const Docsrender = (props) =>{
 const Renderchat = (props) =>{
 
         console.log(props.chat+"here is docssss chat")
+        const url = process.env.REACT_APP_SERVER_URL
+        const deletechat = (chatid) =>{
+                console.log(chatid)   //print id of chat which need to be deleted
+                axios.get(url+"/deletechat/"+chatid+"/"+localStorage.getItem("userid"))
+                .then( (response) =>{
+
+                        if(response.data === 200){
+                                toast.success("⛔ message deleted successfully",{
+                                        position:"top-center",autoClose:1000,
+                                })
+                                props.getallchat()
+                        }else if(response.data === 400){
+                                toast.error("⛔you can't delete this chat",{
+                                        position:"top-center",autoClose:1000,
+                                })
+                                props.getallchat()
+                        }
+                },(error)=>{
+                        console.log(error)
+                })
+        }
 
         
 
@@ -47,6 +68,7 @@ const Renderchat = (props) =>{
 
                                                                                                         <div class="">
                                                                                                                 
+                                                                                                                <span onClick={() => deletechat(d.id)}class="trash px-2"><i style={{width:"25px"}}class="fa fa-trash" aria-hidden="true"></i></span>
                                                                                                                 <span class="h6 px-2 text-danger">{d.time}</span>
                                                                                                         </div>
                                                                                                         

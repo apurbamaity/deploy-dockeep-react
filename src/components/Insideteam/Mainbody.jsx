@@ -1,5 +1,6 @@
 import React, { Component,useState,useEffect } from "react";
 import Renderchat from './Renderchat.jsx'
+import { ToastContainer,toast } from "react-toastify";
 import axios from 'axios'
 import Chatbox from './Chatbox'
 import Docsrender from "./Docsrender.jsx";
@@ -53,18 +54,46 @@ const Renderdocs = (props) =>{
 
 const Showmwmber = (props) =>{
 
+        const teamid = props.teamid
+
+        const remove = (memberid) =>{
+                //console.log("hreee remove")
+                const url = process.env.REACT_APP_SERVER_URL
+                console.log(teamid)
+                axios.get(url+"/removemember/"+teamid+"/"+memberid+"/"+localStorage.getItem('userid') )
+                .then( (res) =>{
+                        if(res.data === 200){
+                                toast.success("⛔ message deleted successfully",{
+                                        position:"top-center",autoClose:1000,
+                                })
+                        }else if(res.data === 400){
+                                toast.error("⛔ You can not remove",{
+                                        position:"top-center",autoClose:1000,
+                                })
+                        }
+                },(error) =>{
+
+                })
+
+
+
+        }
+
         return(
                 <>
                         {
                                 props.member.map( (o) =>(
                                         <>
-                                                <div class="d-flex flex-row justify-content-between m-1 pointer">
+                                                <div class="d-flex flex-row justify-content-between m-1">
                                                         <div>
                                                                 <h6> <i class="fa fa-user" aria-hidden="true"></i>   {o.username}</h6>
+                                                                <div class="p-small">{o.userid}</div>
                                                         </div>
-                                                        {/*<div>
-                                                                <h6> <i class="fa fa-chain-broken text-danger" aria-hidden="true"></i> </h6>
-                                                        </div>*/}
+                                                        <div class="px-3">
+                                                                <h6 onClick={() => remove(o.id) } class="pointer"> 
+                                                                <i class="fa fa-chain-broken text-danger fa-2x" aria-hidden="true"></i> 
+                                                                </h6>
+                                                        </div>
                                                                                 
                                                                                 
                                                 </div>
@@ -175,20 +204,20 @@ const Mainbody = (props) =>{
 
                                                                 
                                                                 <div class="col">
-                                                                        <Renderdocs chat={chat} />
+                                                                        <Renderdocs chat={chat}/>
                                                                 </div><br/>
 
                                                                 <br/>
 
                                                                 <h5 class="text-danger doc_single">All Team Members</h5>
                                                                 <div class="col">
-                                                                        <Showmwmber member={member} />
+                                                                        <Showmwmber teamid={props.id} member={member} />
                                                                 </div><br/>
 
 
                                                         </div>
 
-                        <div class="container">
+                        <div class="container main_body">
                                 <div>
                                         <div>
                                                 <div class="row py-3">
@@ -223,7 +252,7 @@ const Mainbody = (props) =>{
 
                                                                 <h5 class="text-danger doc_single">All Team Members</h5>
                                                                 <div class="col">
-                                                                        <Showmwmber member={member} />
+                                                                        <Showmwmber teamid={props.id} member={member} />
                                                                 </div><br/>
                                                         </div>
 
@@ -232,7 +261,7 @@ const Mainbody = (props) =>{
                                                         <div class="col-lg-8 col-sm-12 chatbar p-3">
                                                                 <h5>message manager</h5>
                                                                 <div class="col">
-                                                                        <Renderchat id={props.id} chat={chat}/>
+                                                                        <Renderchat getallchat={getAll} id={props.id} chat={chat}/>
 
                                                                         <div id="comehere" class="row doc_single hide_this m-1">
                                                                                 <div class="col">

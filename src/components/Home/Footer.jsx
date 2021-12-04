@@ -11,19 +11,18 @@ const Footer = () =>{
                 <>
 
 
-                <footer style={{marginTop:"200px"}}>
+                <footer style={{ height:"200px" , marginTop:"200px"}}>
 
-                <div class="container p-5">
+                <div class="container py-3">
                         <div class="row">
                                 <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                                        <p class="h2"> <a class="navbar-brand" href="/"><span>Game</span><span>Reck</span><span>.com</span></a>
+                                        <p class="h2"> <a class="navbar-brand" href="/"><span>dock</span><span>KEEP</span><span>.com</span></a>
                                         </p>
-                                        <p class="h4 text-white">Everything about games at one place.</p>
+                                        <p class="h4 text-white">Keep your every docs at one place.</p>
                                 </div>
 
                                 <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                                        <p class="p-large text-white">Write for us at gamereck@gmail.com.</p>
-                                        <a  class="h5 text-white">REGISTER</a>
+                                        <p class="p-large text-white">Write for us at dockkeep@gmail.com</p>
                                 </div>
 
                         </div>
