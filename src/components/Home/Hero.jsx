@@ -108,7 +108,7 @@ const Hero =()=>{
                                                          />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-12 py-5">
-                                                        <h1 class="text-danger head_text">ONE WORKSPACE.. EVERY TEAM</h1>
+                                                        <h1 class="text-danger head_text">ONE WORKSPACE.. EVERY TEAM.</h1>
                                                         <div class="p-large head_para">WE ARE MORE THAN A DOC TRY IT FREE TODAY OR JOIN A EXISTING TEAM</div>
                                                         <div class="py-3 head_btn">
                                                                 <a href="/joinorcreate#join"><input type="submit" class="btn w-100 btn-info" value="Join A Workspace" /></a>
