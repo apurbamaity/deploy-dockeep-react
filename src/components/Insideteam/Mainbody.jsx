@@ -4,8 +4,24 @@ import { ToastContainer,toast } from "react-toastify";
 import axios from 'axios'
 import Chatbox from './Chatbox'
 import Docsrender from "./Docsrender.jsx";
+import {useHistory} from 'react-router-dom'
 
 import './Insideteam.css'
+
+const CheckIfMember = (props) =>{
+        const history = useHistory()
+        console.log("checkifmember",props.member)
+        props.member.map( (d) =>{
+                if(d.userid === localStorage.getItem('userid')){
+                        return(<></>)
+                }
+        })
+        history.push({
+                pathname: '/',
+                status:"signin_success",
+        });
+        
+}
 
 const Searchresults = (props) => {
 
@@ -38,7 +54,9 @@ const Renderdocs = (props) =>{
 
                 props.chat.map((d) =>(
 
-                        <Docsrender d={d} />
+                        <div class="px-2">
+                                 <Docsrender d={d} />
+                        </div>
                 ))
 
 
@@ -100,6 +118,7 @@ const Singlemember = (props) =>{
 const Showmwmber = (props) =>{
 
         const teamid = props.teamid
+        console.log("inember",props.member)
 
         const remove = (memberid) =>{
                 //console.log("hreee remove")
@@ -143,6 +162,7 @@ const Mainbody = (props) =>{
 
         
         console.log(props.id)
+        const history = useHistory()
 
         const [search,setSearch] = useState("");
         const [searchresults,setSearchResults] = useState([]);
@@ -191,10 +211,44 @@ const Mainbody = (props) =>{
                         axios.get(url+"/getallmembers/"+props.id)
                         .then( (response) => {
                                 console.log(response.data)
-                                setMember(response.data)
+                                var match = 0
+                                
+                                response.data.map( (d) =>{
+                                        if(d.userid === localStorage.getItem('userid')){
+                                               setMember(response.data)
+                                               console.log("matcheddd")
+                                               match = 1
+                                        }
+                                })
+                                if(match == 0){
+                                        history.push({
+                                                pathname: '/',
+                                                status:"team_access_denied",
+                                        });
+                                }
+                                
+
                         },(error)=>{
 
                 })
+        }
+        function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        const checkIfMember = () =>{
+                console.log("herreree")
+                console.log(member)
+                /*member.map( (d) => {
+                        console.log(d.userid)
+                        if(d.memberid === localStorage.getItem('userid')){
+                                return
+                        }
+                })*/
+                /*history.push({
+                        pathname: '/',
+                        status:"signin_success",
+                 });*/
         }
 
 
@@ -216,7 +270,7 @@ const Mainbody = (props) =>{
 
                                                                 <div class="d-flex flex-direction-row py-2">
                                                                         <div class="px-1">
-                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2" placeholder="enter file name" />
+                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2 " placeholder="enter file name" />
                                                                         </div> 
                                                                         <div class="" onClick={getRelevantDocs}>
                                                                                 <span class="h5"> find  <i class="fa fa-search" aria-hidden="true"></i> </span>
@@ -255,7 +309,7 @@ const Mainbody = (props) =>{
                                                         <div class="col-lg-4 col-sm-0 sidebar py-3 px-1 small_sidebar_hide">
 
                                                                 <div class="d-flex flex-direction-row py-2">
-                                                                        <div class="px-1">
+                                                                        <div class="px-1 search_box">
                                                                                 <input onChange={updateSearch} type="text" classNamae="w-100 px-2 search_box" placeholder="enter file name" />
                                                                         </div> 
                                                                         <div class="" onClick={getRelevantDocs}>
@@ -268,9 +322,8 @@ const Mainbody = (props) =>{
                                                                 </div> <br />
 
 
-                                                                <h5 class="text-danger doc_single">docs manager</h5>
-                                                                        <Renderdocs chat={chat} />
-                                                                <br/>
+                                                                <h5 class="text-danger doc_single ">docs manager</h5>
+                                                                        <Renderdocs chat={chat} />  <br/>
 
 
                                                                 {/*<div class="invite_link text-center p-2">
@@ -281,7 +334,7 @@ const Mainbody = (props) =>{
                                                                 </div><br/>*/}
 
                                                                 <h5 class="text-danger doc_single">All Team Members</h5>
-                                                                <div class="col">
+                                                                <div class="col px-2">
                                                                         <Showmwmber getAllMembers={getAllMembers} teamid={props.id} member={member} />
                                                                 </div><br/>
                                                         </div>

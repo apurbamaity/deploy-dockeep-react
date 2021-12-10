@@ -143,7 +143,7 @@ const Hero =()=>{
                                                 <div class="explore_teams text-center h3 py-3">
                                                         EXPLORE ALL WORKSPACES
                                                 </div>
-                                                <div class=" row text-center" id="team">
+                                                <div class="d-flex flex-wrap justify-content-center" id="team">
 
 
                                                         <Teams team={team}/>

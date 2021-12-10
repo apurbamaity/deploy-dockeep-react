@@ -112,21 +112,27 @@ a  , a:focus{
         border-radius: 25px;
 }
 
-input{
-        border-radius: 15px;
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.694);
-        border : none;
 
+
+.signin_input{
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.694);
+        border : 1px solid black;
 }
 
-input:hover , input:focus{
+.signin_input:hover,.signin_input:focus{
+        border :none;
+        border-radius: 0;
+        border-bottom : 3px solid black;
+}
+
+/*.signin input:hover , .signin input:focus{
         text-decoration:none;
         outline:none;
         box-shadow: 0 0 10px rgba(42, 218, 238, 0.694);
         border-radius: 5px;
         border-bottom : 4px solid blue;
         
-}
+}*/
 
 
 /* FOOTER */

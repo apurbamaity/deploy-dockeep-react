@@ -148,6 +148,7 @@ a  , a:focus{
 }
 textarea{
         height:100%;
+        width:1000px;
 }
 
 
@@ -161,7 +162,7 @@ textarea{
         position: fixed;
         width:100%;
         bottom:0;
-    
+        border-top: 3px solid red;
         background-color:#ffd6cc;
 }
 
@@ -188,12 +189,30 @@ textarea{
         color:red;
 }
 
-.search_docs:hover{
-        border : 2px solid red;
-        padding : 5px;
-        border-radius :10px;
+.search_box input{
+        border : none;
+        border-radius : 0px;
 }
-.search_box{
-        height:100px;
+
+.search_docs:hover{
+        border : 3px solid blue;
+        border-radius :15px;
+        padding : 4px;
+}
+
+.search_box input:hover , .search_box input:focus{
+        border-bottom : 3px solid red;
+        border-radius: 0px;
+}
+
+
+.file{
+        border : none;
+        box-shadow: 0;
+}
+
+.pointer_send:hover , .pointer_send:focus{
+        color : red;
+        cursor:pointer;
 }
 

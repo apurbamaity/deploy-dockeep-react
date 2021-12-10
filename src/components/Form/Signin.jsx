@@ -83,8 +83,8 @@ return(
                                                         <div className="">
                                                                 <h1 className="text-center">Welcome Back :) to Family</h1>
                                                                 <div className="py-2 p-large">Don't have an account <a className="text-danger" href="/signup">signup</a> here</div>
-                                                                <input onChange={update} name="userid" type="text" className="px-2 w-100 join_inner" placeholder="enter registered email-id" /><br/><br/>
-                                                                <input onChange={update} name="password" type="text" className="px-2 w-100 join_inner" placeholder="enter password" /><br/><br/>
+                                                                <input onChange={update} name="userid" type="email" className="px-2 w-100 join_inner signin_input" placeholder="enter registered email-id" /><br/><br/>
+                                                                <input onChange={update} name="password" type="password" className="px-2 w-100 join_inner signin_input" placeholder="enter password" /><br/><br/>
                                                                 <input onClick={submit} type="submit" value="signin" className="w-100 btn btn-success text-white" />
                                                         </div>
                                                 </div>

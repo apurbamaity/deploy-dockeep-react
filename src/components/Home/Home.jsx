@@ -44,6 +44,10 @@ const Home = (props) =>{
                         })
                 }else if(props.location.status === "signin_success"){
                         window.location.reload()
+                }else if(props.location.status === "team_access_denied"){
+                        toast.error("You Are Not A member",{
+                                        position : "top-center",autoClose : 2000
+                        })
                 }
 
         },[]);

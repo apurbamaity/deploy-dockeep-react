@@ -36,7 +36,16 @@ const Signup = () =>{
                         toast.error("password not matched",{
                                 position:"bottom-center",autoClose:2000,
                         })
-                }else if(formdata.userid.includes("@")){
+                }else if(formdata.username.length == 0){
+                        toast.error("Enter Some Username",{
+                                position:"bottom-center",autoClose:2000,
+                        })
+                }else if(formdata.password.length == 0){
+                        toast.error("Enter Some password",{
+                                position:"bottom-center",autoClose:2000,
+                        })
+                }
+                else if(formdata.userid.includes("@")){
                         
                         axios.post(process.env.REACT_APP_SERVER_URL+"/register",formdata)
                         .then( (response) => {
@@ -84,14 +93,14 @@ return(
                                                 style={{width:"100%"}} />
                                         </div>
                                         <div className="col-lg-6 col-sm-6">
-                                                <div className="h-100 d-flex justify-content-center align-items-center">
+                                                <div className="h-100 d-flex justify-content-center align-items-center signin">
                                                         <div className="">
                                                                 <h1 className="text-center">Sign Up Here</h1>
                                                                 <div className="py-2 p-large">Already have an account <a className="text-danger" href="/signin">signin</a> here</div>
-                                                                <input onChange={update} name="username" type="text" className="p-2 w-100 " placeholder="enter username" required/><br/><br/>
-                                                                <input onChange={update} name="userid" type="email" className="p-2 w-100 " placeholder="enter email-id" /><br/><br/>
-                                                                <input onChange={update} name="password" type="password" className="p-2 w-100 " placeholder="enter password" /><br/><br/>
-                                                                <input onChange={update} name="conpass" type="text" className="p-2 w-100 " placeholder="confirm password" /><br/><br/>
+                                                                <input onChange={update} name="username" type="text" className="p-2 w-100 signin_input " placeholder="enter username" required/><br/><br/>
+                                                                <input onChange={update} name="userid" type="email" className="p-2 w-100 signin_input" placeholder="enter email-id" /><br/><br/>
+                                                                <input onChange={update} name="password" type="password" className="p-2 w-100 signin_input" placeholder="enter password" /><br/><br/>
+                                                                <input onChange={update} name="conpass" type="password" className="p-2 w-100 signin_input" placeholder="confirm password" /><br/><br/>
                                                                 <input onClick={submit} type="submit" value="signup" className="w-100 btn btn-success text-white" />
                                                         </div>
                                                 </div>

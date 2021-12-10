@@ -212,28 +212,46 @@ class Chatbox extends Component{
 
                 <>
 
-                        <div class="Chatbox px-2 py-1">
-                                <div class="d-flex justify-content-between mb-0 mb-1">
-                                        <div class="file">
-                                                
-                                                <input onChange={this.onFileChange} type="file"/>
-                                        </div>
-                                        
-
-                                </div>
+                        <div class="Chatbox px-2 py-3">
                                 
                                 
-                                <textarea class="px-1 p-large comment w-100"  onChange={this.onTextChange} placeholder="Enter your comment here" style={{border:"none"}}></textarea>
+                                
+                                
 
                                 
-                                <div class="d-flex flex-row mb-1">
+                                {/*<div class="d-flex flex-row mb-1">
                                         <div class="file w-100">
                                                 <input onClick = {this.uploadFile} type="submit" value="send a message" class="h6 text-white w-100 btn btn-info" />
                                         </div>
-                                        {/*<div class="file px-2">
+                                        <div class="file px-2">
                                                 <input type="submit" value="send a task" class="h6 text-white w-100 btn btn-success" />
-                                        </div>*/}
-                                </div>
+                                        </div>*
+                                </div>*/}
+
+                                {/*<div class="d-flex align-items-center">*/}
+                                        <div>
+                                                <div class="row w-100">
+
+                                                        <div class="col-lg-2 col-sm-12 col-12 text-center">
+                                                                <div class="d-flex justify-content-between mb-0 mb-1">
+                                                                        <div class="file border-0">
+                                                
+                                                                                <input class="border-0" onChange={this.onFileChange} type="file"/>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-sm-11 col-11">
+                                                                <input type="text" class="px-1 p-large comment w-100"  onChange={this.onTextChange} placeholder="Enter your comment here" style={{border:"none"}}></input>
+                                                        </div>
+
+                                                        <div class="col-lg-1 col-sm-1 col-1 file pointer_send">
+                                                                <div onClick = {this.uploadFile}><i class="fa fa-arrow-circle-up fa-2x"></i></div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                {/*</div>*/}
                                 {/*value={comment} onChange={updateComment} value={comment} name="comment" */}
 
                         </div>

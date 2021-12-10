@@ -11,7 +11,7 @@ const Docsrender = (props) =>{
                 )
         }else{
                 return(
-                        <Docs doc={props.d} />
+                        <Docs class="single_doc" doc={props.d} />
                 )
         }
 

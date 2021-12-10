@@ -11,11 +11,13 @@ const Docsrender = (props) =>{
 
         if(props.d.name == null){
                 return(
-                        <div className="text-danger">no file choosen</div>
+                        <div className="text-danger"></div>
                 )
         }else{
                 return(
-                        <Docs doc={props.d} />
+                        <div class="single_doc px-2">
+                                <Docs doc={props.d} />
+                        </div>
                 )
         }
 
@@ -75,7 +77,7 @@ const Renderchat = (props) =>{
                                                                                                 </div>
                                                                                         </div>
                                                                                         <div class="documrnt d-flex flex-row flex-wrap mt-3">
-                                                                                                <div class="px-2 single_doc">
+                                                                                                <div class="px-2">
                                                                                                         <Docsrender d={d} />
                                                                                                         {/*<Docs doc={d} />*/}
                                                                                                         
