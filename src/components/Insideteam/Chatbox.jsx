@@ -48,7 +48,15 @@ class Chatbox extends Component{
 
 
         const url = process.env.REACT_APP_SERVER_URL
-        const send = this.props.id+"&&"+localStorage.getItem('userid')+"&&"+this.state.comment
+        var send = ""
+        if(this.state.comment.length == 0){
+                
+                send = this.props.id+"<<&&>>"+localStorage.getItem('userid')+"<<&&>>"+"no_message_chossen"
+        }else{
+                console.log("got hererere")
+                send = this.props.id+"<<&&>>"+localStorage.getItem('userid')+"<<&&>>"+this.state.comment
+        }
+        
         console.log(typeof data.file)
         
         /*if(data.name == undefined){

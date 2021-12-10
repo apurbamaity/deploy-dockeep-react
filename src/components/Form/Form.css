@@ -109,14 +109,15 @@ a  , a:focus{
 .join_inner{
         background-color:white;
         border:3px solid black;
-        border-radius: 25px;
+        
 }
 
 
 
 .signin_input{
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.694);
+        box-shadow: 0 ;
         border : 1px solid black;
+        border-radius: 25px;
 }
 
 .signin_input:hover,.signin_input:focus{
