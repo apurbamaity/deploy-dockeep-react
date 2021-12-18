@@ -134,7 +134,7 @@ class Docs extends Component {
 
        
 
-        <div class="text pointer" onClick={() =>this.downloadRandomImage(this.props.doc.id)}>
+        <div class="text pointer single_member" onClick={() =>this.downloadRandomImage(this.props.doc.id)}>
                 <span ><h6> <i class="fa fa-file" aria-hidden="true"></i> {this.props.doc.name}   
                 <i class="fa text-danger fa-arrow-circle-down" aria-hidden="true"></i></h6></span>
         </div>

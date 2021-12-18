@@ -22,7 +22,12 @@ const Navbar = (props) =>{
         },[]);
         return(
                 <>
-                        <nav class="navbar navbar-expand-md1 bg-light px-lg-3 px-3">
+                        <nav class="navbar navbar-expand-md1 bg-light ">
+
+                                <div class="container">
+
+
+                                
                                 {/*<span class=""> <h4 class="logotext__1"><i class="fa fa-bars" aria-hidden="true"></i></h4>       
                                   <span><a href="/"> <h4 class="logotext">DOCX</h4>  </a>     </span>   </span>*/}
 
@@ -31,7 +36,7 @@ const Navbar = (props) =>{
                                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                         </div>
                                         <div class=" h4 px-2">
-                                                <a href="/">DOCKEEP</a>
+                                                <a href="/">📄DOCKEEP</a>
                                         </div>
                                 </div> 
 
@@ -39,6 +44,9 @@ const Navbar = (props) =>{
                                         <a class="h6" href=""><span class="href">  {team}</span></a><br/>
                                         <span class="p-small text-success">{props.teamid}</span>
                                 </span>
+
+
+                                </div>
                         </nav>
                 </>
         )

@@ -96,33 +96,47 @@ const Hero =()=>{
 
 
 
-                        <div class="Hero mt-5">
+                        <div class="Hero">
 
 
                                 <div class="container">
                                         <div class="row">
                                                 
-                                                <div class="col-lg-6 col-md-6 col-12 text-danger px-5 image">
+                                                <div class="col-lg-6 col-md-6 col-12 text-danger text-center">
                                                         <img 
-                                                        src="https://www.notion.so/cdn-cgi/image/format=auto,width=640,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png"
+                                                        src="https://webassets.honeygain.com/uploads/2020/07/15054451/img_security.svg" style={{width:"80%"}}
                                                          />
                                                 </div>
-                                                <div class="col-lg-6 col-md-6 col-12 py-5">
-                                                        <h1 class="text-danger head_text">ONE WORKSPACE. EVERY TEAM..</h1>
-                                                        <div class="p-large head_para">WE ARE MORE THAN A DOC TRY IT FREE TODAY OR JOIN A EXISTING TEAM</div>
-                                                        <div class="py-3 head_btn">
-                                                                <a href="/joinorcreate#join"><input type="submit" class="btn w-100 btn-info" value="Join A Workspace" /></a>
-                                                        </div>
+                                                <div class="col-lg-6 col-md-6 col-12 meke_flex">
+                                                        
+                                                                        
+                                
+
+                                                                        <div class="h3 head_para">
+                                                                                ONE TEAM EVERY MEMBERS
+                                                                        </div>
+                                                                        <div class="p-large head_para text-center">
+                                                                                WE ARE MORE THAN A DOC TRY IT FREE TODAY OR JOIN A EXISTING TEAM
+                                                                        </div>
+                                                                        <div class="py-3 head_btn p-large text-danger">
+                                                                                <a href="/joinorcreate#join"><input type="submit" class="btn btn_join_a_workspace w-100 " value="Join A Workspace  🏪" /></a>
+                                                                        </div>  
+
+
+                                                                       
+                                                                
                                                 </div>
                                          </div>
                                 </div>
 
+                                <br/>
+
 
                                 {/*MAIN DIV --2 */}
-                                <div class="container py-lg-3 py-0">
+                                <div class="container">
                                         <div class="B py-3">
                                                 <div class="d-flex justify-content-center py-3">
-                                                        <div class="A"> TRUSTED BY TEAMS AT</div>
+                                                        <div class="h3"> TRUSTED BY TEAMS AT</div>
                                                 </div>
                                                 <div class="d-flex flex-row justify-content-center">
                                                         <a href="https://www.pixer.io/"><div class="px-2 text-danger">PIXER</div></a>
@@ -137,8 +151,8 @@ const Hero =()=>{
 
                                 {/* MAIN DIV -- 4*/}
 
-                                <div class="container p-2">
-                                        <div class=" B1  p-2">
+                                <div class="all_team p-2">
+                                        <div class="container B1  p-2">
 
                                                 <div class="explore_teams text-center h3 py-3">
                                                         EXPLORE ALL WORKSPACES

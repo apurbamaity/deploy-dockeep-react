@@ -59,18 +59,18 @@ const Renderchat = (props) =>{
                 {/*<Docs doc={null} />*/}
 
                         {props.chat.map((d)=>(
-                                <div class="row doc_single m-1">
+                                <div class="row doc_single mt-3">
                                                                                 <div class="col">
                                                                                         <div class="row sender p-1">
                                                                                                 <div class="d-flex flex-row justify-content-between">
                                                                                                         <div class="">
-                                                                                                                <span><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                                                                                                                <span>🧔🏻</span>
                                                                                                                 <span class="h6 px-2">{d.username}</span>
                                                                                                         </div>
 
                                                                                                         <div class="">
                                                                                                                 
-                                                                                                                <span onClick={() => deletechat(d.id)}class="trash px-2"><i style={{width:"25px"}}class="fa fa-trash" aria-hidden="true"></i></span>
+                                                                                                                <span onClick={() => deletechat(d.id)}class="trash px-2">📥delete</span>
                                                                                                                 <span class="h6 px-2 text-danger">{d.time}</span>
                                                                                                         </div>
                                                                                                         

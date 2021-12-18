@@ -75,14 +75,14 @@ const Singlemember = (props) =>{
         if(props.index === 0){
                 return(
                         <>
-                                                <div class="d-flex flex-row justify-content-between m-1">
+                                                <div class="d-flex flex-row justify-content-between mt-3 p-2 single_member bg-white">
                                                         <div>
-                                                                <h6> <i class="fa fa-user" aria-hidden="true"></i>   {props.object.username}</h6>
-                                                                <div class="p-small">{props.object.userid}</div>
+                                                                <h6> <i class="fa fa-user fa-2x px-2" aria-hidden="true"></i>   {props.object.username}</h6>
+                                                                <div class="p-small px-3">{props.object.userid}</div>
                                                         </div>
-                                                        <div class="px-3">
-                                                                <h6 class="pointer"> 
-                                                                ADMIN
+                                                        <div class="py-3">
+                                                                <h6 class="pointer search_submit_2"> 
+                                                                 admin
                                                                 </h6>
                                                         </div>
                                                                                 
@@ -95,14 +95,15 @@ const Singlemember = (props) =>{
         }else{
                 return(
                         <>
-                                                <div class="d-flex flex-row justify-content-between m-1">
+                                                <div class="d-flex flex-row justify-content-between mt-3 p-2 single_member bg-white">
+                                                        
                                                         <div>
-                                                                <h6> <i class="fa fa-user" aria-hidden="true"></i>   {props.object.username}</h6>
-                                                                <div class="p-small">{props.object.userid}</div>
+                                                                <h6> <i class="fa fa-user fa-2x px-2" aria-hidden="true"></i>   {props.object.username}</h6>
+                                                                <div class="p-small px-4">{props.object.userid}</div>
                                                         </div>
-                                                        <div class="px-3">
-                                                                <h6 onClick={() => props.remove(props.object.id) } class="pointer"> 
-                                                                remove   <i class="fa fa-chain-broken text-danger " aria-hidden="true"></i> 
+                                                        <div class="">
+                                                                <h6 onClick={() => props.remove(props.object.id) } class="search_submit_1"> 
+                                                                <i class="fa fa-chain-broken" aria-hidden="true"></i> 
                                                                 </h6>
                                                         </div>
                                                                                 
@@ -268,12 +269,12 @@ const Mainbody = (props) =>{
 
                                                         <div class="small_sidebar py-3 px-1">
 
-                                                                <div class="d-flex flex-direction-row py-2">
-                                                                        <div class="px-1">
-                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2 " placeholder="enter file name" />
+                                                                <div class="d-flex flex-direction-ro px-2 py-2 search_box_with_icon justify-content-between">
+                                                                        <div class="px-1 search_box w-50">
+                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2 search_box" placeholder="search for a file" />
                                                                         </div> 
-                                                                        <div class="" onClick={getRelevantDocs}>
-                                                                                <span class="h5"> find  <i class="fa fa-search" aria-hidden="true"></i> </span>
+                                                                        <div class="pointer" onClick={getRelevantDocs}>
+                                                                                🔍find
                                                                         </div> 
                                                                 </div>
 
@@ -294,7 +295,7 @@ const Mainbody = (props) =>{
                                                                 <br/>
 
                                                                 <h5 class="text-danger doc_single">All Team Members</h5>
-                                                                <div class="col">
+                                                                <div class="col px-1">
                                                                         <Showmwmber getAllMembers={getAllMembers} teamid={props.id} member={member} />
                                                                 </div><br/>
 
@@ -306,14 +307,14 @@ const Mainbody = (props) =>{
                                         <div>
                                                 <div class="row py-3">
 
-                                                        <div class="col-lg-4 col-sm-0 sidebar py-3 px-1 small_sidebar_hide">
+                                                        <div class="col-lg-4 col-sm-0 sidebar p-3 small_sidebar_hide">
 
-                                                                <div class="d-flex flex-direction-row py-2">
-                                                                        <div class="px-1 search_box">
-                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2 search_box" placeholder="enter file name" />
+                                                                <div class="d-flex flex-direction-ro px-2 py-2 search_box_with_icon justify-content-between">
+                                                                        <div class="px-1 search_box w-80">
+                                                                                <input onChange={updateSearch} type="text" classNamae="w-100 px-2 search_box" placeholder="search for a file" />
                                                                         </div> 
-                                                                        <div class="" onClick={getRelevantDocs}>
-                                                                                <span class="h5 pointer search_docs"> find  <i class="fa fa-search" aria-hidden="true"></i> </span>
+                                                                        <div class="pointer" onClick={getRelevantDocs}>
+                                                                                🔍find
                                                                         </div> 
                                                                 </div>
 
@@ -322,7 +323,7 @@ const Mainbody = (props) =>{
                                                                 </div> <br />
 
 
-                                                                <h5 class="text-danger doc_single ">docs manager</h5>
+                                                                <h5 class=" doc_single_left_bar ">docs manager</h5>
                                                                         <Renderdocs chat={chat} />  <br/>
 
 
@@ -333,7 +334,7 @@ const Mainbody = (props) =>{
                                                                         </div>
                                                                 </div><br/>*/}
 
-                                                                <h5 class="text-danger doc_single">All Team Members</h5>
+                                                                <h5 class=" doc_single_left_bar">All Team Members</h5>
                                                                 <div class="col px-2">
                                                                         <Showmwmber getAllMembers={getAllMembers} teamid={props.id} member={member} />
                                                                 </div><br/>

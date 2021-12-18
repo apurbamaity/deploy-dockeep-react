@@ -57,8 +57,6 @@ class Chatbox extends Component{
                 send = this.props.id+"<<&&>>"+localStorage.getItem('userid')+"<<&&>>"+this.state.comment
         }
         
-        console.log(typeof data.file)
-        
         /*if(data.name == undefined){
                 console.log("hereee"+data.name)
                 axios.post(url+"/files1/"+send).then(

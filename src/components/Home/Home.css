@@ -80,6 +80,25 @@ a  , a:focus{
         text-decoration: none;
 }
 
+.meke_flex{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+}
+
+.btn_join_a_workspace{
+        border-radius:15px 0px 15px 0px;
+        border:2px solid blue;
+        background-color:white;
+}
+.btn_join_a_workspace:hover{
+        border-radius:15px 0px 15px 0px;
+        border:2px solid red;
+        cursor: pointer;
+}
+
 
 
 
@@ -142,7 +161,7 @@ a  , a:focus{
 .add_border{
         border : 2px solid black;
         padding : 3px;
-        border-radius:10px;
+        border-radius:10px 3px 10px 3px;
         color:red;
 }
 .add_border:focus , .add_border:hover{
@@ -215,18 +234,22 @@ a  , a:focus{
 
 
 /*main div --2 */
-.A{
+/*.A{
         font-family: 'Fredoka One', cursive;
         font-size: 1.5rem;
 	line-height: 1.50rem;
 	letter-spacing: 0.5px;
-}
+}*/
 
 .B{
         background-color:lightyellow;
-        border:5px solid black;
-        border-radius: 25px;
+        border:3px solid black;
+        border-radius: 5px 25px 5px 25px;
         font-family: 'Bebas Neue', cursive;
+}
+.all_team{
+        background-color: #fcfafb;
+
 }
 
 
@@ -246,7 +269,7 @@ a  , a:focus{
         background-color:red;
 }
 .B1{
-        background-color:lightyellow;
+        
         
         font-family: 'Bebas Neue', cursive;
 }
