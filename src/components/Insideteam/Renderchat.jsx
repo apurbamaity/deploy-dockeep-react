@@ -22,6 +22,19 @@ const Docsrender = (props) =>{
         }
 
 }
+const Chatrender = (props) =>{
+        if(props.d.msg === "no_message_chossen"){
+                return(
+                        <div className="text-danger"></div>
+                )
+        }else{
+                return(
+                        <div class="">
+                                {props.d.msg}
+                        </div>
+                )
+        }
+}
 
 const Renderchat = (props) =>{
 
@@ -85,7 +98,8 @@ const Renderchat = (props) =>{
                                                                                         </div>
                                                                                         <div class="row">
                                                                                                 <span class="font-weight-bolder p-large">
-                                                                                                        {d.msg}
+                                                                                                        
+                                                                                                        <Chatrender d={d} />
                                                                                                 </span>
                                                                                         </div>
                                                                                         {/*<div class="row">
