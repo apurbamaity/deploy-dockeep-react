@@ -32,14 +32,14 @@ class Chatbox extends Component{
         return;
         }*/
 
-        if (this.state.file.size >= 1000000) {
+        /*if (this.state.file.size >= 1000000) {
                 toast.error('🦄 file size should be less 1 mb!!', {
                         position: "top-center",
                         autoClose: 2000,
                         closeOnClick: true,
                 });
                 return;
-        }
+        }*/
 
         let data = new FormData();
         data.append("file", this.state.file);
